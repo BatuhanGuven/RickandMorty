@@ -44,12 +44,13 @@ fun SplashScreen(onSplashScreenFinished: () -> Unit){
         sharedPreferences.edit().putBoolean("isFirstLaunch", false).apply()
         onSplashScreenFinished()
     }
+
     
     Box(modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ){
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Image(painter = painterResource(id = R.drawable.rick), contentDescription ="Splash İmage" )
+            Image(painter = painterResource(id = R.drawable.rick), contentDescription ="Splash Image" )
             Text(
                 text = if (isFirstLaunch) "Welcome" else "Hello",
                 style = androidx.compose.ui.text.TextStyle(fontSize = 36.sp)
